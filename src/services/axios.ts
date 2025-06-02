@@ -5,7 +5,7 @@ import type { AxiosInstance, InternalAxiosRequestConfig } from "axios";
 const username = import.meta.env.VITE_USERNAME;
 const password = import.meta.env.VITE_PASSWORD;
 
-const api: AxiosInstance = axios.create({
+const axiosInstance: AxiosInstance = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL,
   headers: {
     "Content-Type": "application/json",
@@ -18,12 +18,12 @@ const api: AxiosInstance = axios.create({
 });
 
 // Optional request/response logging
-api.interceptors.request.use((config: InternalAxiosRequestConfig) => {
+axiosInstance.interceptors.request.use((config: InternalAxiosRequestConfig) => {
   console.log("🔼 Request:", config);
   return config;
 });
 
-api.interceptors.response.use(
+axiosInstance.interceptors.response.use(
   (response) => {
     console.log("✅ Response:", response);
     return response;
@@ -34,4 +34,4 @@ api.interceptors.response.use(
   }
 );
 
-export default api;
+export default axiosInstance;
