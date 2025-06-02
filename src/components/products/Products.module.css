@@ -1,0 +1,14 @@
+.productsWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+@media (min-width: 1440px) {
+  .productsWrapper {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
