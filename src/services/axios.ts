@@ -19,17 +19,14 @@ const axiosInstance: AxiosInstance = axios.create({
 
 // Optional request/response logging
 axiosInstance.interceptors.request.use((config: InternalAxiosRequestConfig) => {
-  console.log("🔼 Request:", config);
   return config;
 });
 
 axiosInstance.interceptors.response.use(
   (response) => {
-    console.log("✅ Response:", response);
     return response;
   },
   (error) => {
-    console.error("❌ Error:", error);
     return Promise.reject(error);
   }
 );
