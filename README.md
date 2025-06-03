@@ -1,54 +1,54 @@
-# React + TypeScript + Vite
+# 🛍️ Webcraftix
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Webcraftix** is a modern, fully responsive e-commerce front-end built using React.js and TypeScript. It includes secure login, dynamic product listing, cart management with Redux Toolkit, and a clean UI experience.
 
-Currently, two official plugins are available:
+🔗 **Live Demo**: [https://webcartix.pages.dev/](https://webcartix.pages.dev/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🔐 **Login Auth** – Credential-based login with route protection
+- 🧾 **Product Listing** – View all products with real-time loading states
+- 📦 **Cart Management** – Add, remove, and adjust quantity in cart
+- 🔄 **State Persistence** – Redux Persist ensures cart data is saved on reload
+- 📱 **Responsive Design** – Optimized for mobile, tablet, and desktop
+- 🔔 **Toast Notifications** – Feedback for user actions
+- 📋 **Product Detail Modal** – View more info with an elegant popup
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🧰 Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Tool            | Description                          |
+|-----------------|--------------------------------------|
+| React.js        | UI Framework                         |
+| TypeScript      | Static Typing                        |
+| Redux Toolkit   | Global State Management              |
+| Redux Persist   | State Persistence                    |
+| React Router    | Client-Side Routing                  |
+| React Toastify  | Toast Notification System            |
+| CSS Modules     | Scoped & Modular Styling             |
+| Vite            | Lightning-fast Build Tool            |
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/your-username/webcraftix.git
+cd webcraftix
+
+# Using npm
+npm install
+
+# OR using yarn
+yarn install
+
+## 🔐 Environment Variables
+VITE_USERNAME=admin
+VITE_PASSWORD=admin123
+##Node Version 
+22.11.0
+
+Made with ❤️ by Mithun
