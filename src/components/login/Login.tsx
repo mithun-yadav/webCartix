@@ -1,8 +1,10 @@
 import { toast } from "react-toastify";
 import styles from "./Login.module.css";
 import { Navigate } from "react-router-dom";
+import { useState } from "react";
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const isAuthenticated = localStorage.getItem("auth") === "true";
   if (isAuthenticated) {
     return <Navigate to="/" replace />;
@@ -13,8 +15,6 @@ const Login = () => {
     const form = e.currentTarget;
     const username = form.username.value;
     const password = form.password.value;
-    console.log(username, password, "$$");
-
     if (
       username === import.meta.env.VITE_USERNAME &&
       password === import.meta.env.VITE_PASSWORD
@@ -37,12 +37,20 @@ const Login = () => {
           name="username"
           className={styles.input}
         />
-        <input
-          type="password"
-          placeholder="Password"
-          className={styles.input}
-          name="password"
-        />
+        <div className={styles.inputWrapper}>
+          <input
+            type={showPassword ? "text" : "password"}
+            placeholder="Password"
+            className={styles.input}
+            name="password"
+          />
+          <span
+            className={styles.passwordToggleIcon}
+            onClick={() => setShowPassword((prev) => !prev)}
+          >
+            {showPassword ? "🙈" : "👁️"}
+          </span>
+        </div>
         <button type="submit" className={styles.button}>
           Sign In
         </button>

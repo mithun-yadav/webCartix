@@ -78,3 +78,24 @@
 .button:hover {
   background-color: #2980b9;
 }
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.inputWrapper input {
+  width: 100%;
+  padding-right: 2.5rem; /* Space for icon */
+}
+
+.passwordToggleIcon {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #555;
+  user-select: none;
+}
