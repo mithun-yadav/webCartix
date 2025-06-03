@@ -7,8 +7,10 @@ import ConfirmModal from "../confirmModal/confirmModal";
 import { toast } from "react-toastify";
 import { MdDeleteForever } from "react-icons/md";
 import { FaCartShopping } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 const AddToCart: React.FC = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const [showModal, setShowModal] = useState(false);
@@ -46,6 +48,9 @@ const AddToCart: React.FC = () => {
           <FaCartShopping style={{ color: "#000", fontSize: "3rem" }} />
           <h2>Your Cart is Empty</h2>
           <p>Looks like you haven’t added anything yet.</p>
+          <div className={styles.emptyCartButton}>
+            <button onClick={() => navigate("/")}>Go to Products</button>
+          </div>
         </div>
       </div>
     );
