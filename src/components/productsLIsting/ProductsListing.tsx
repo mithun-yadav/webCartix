@@ -1,4 +1,5 @@
 import { useProductFetch } from "../../hools/hooks";
+import Navbar from "../Navnar/Navbar";
 import ProductCard from "../productCard/ProductCard";
 import styles from "./ProductsListing.module.css";
 
@@ -14,23 +15,26 @@ function Products() {
 
   const productArr = productData?.products || [];
   return (
-    <div className={styles.productsWrapper}>
-      {productData && productArr.length > 0 ? (
-        productArr.map((item) => (
-          <ProductCard
-            key={item?.id}
-            id={item?.id}
-            description={item?.description}
-            price={item?.price}
-            rating={item?.rating}
-            thumbnail={item?.thumbnail}
-            title={item?.title}
-          />
-        ))
-      ) : (
-        <h3>No Product found</h3>
-      )}
-    </div>
+    <>
+      <Navbar />
+      <div className={styles.productsWrapper}>
+        {productData && productArr.length > 0 ? (
+          productArr.map((item) => (
+            <ProductCard
+              key={item?.id}
+              id={item?.id}
+              description={item?.description}
+              price={item?.price}
+              rating={item?.rating}
+              thumbnail={item?.thumbnail}
+              title={item?.title}
+            />
+          ))
+        ) : (
+          <h3>No Product found</h3>
+        )}
+      </div>
+    </>
   );
 }
 
