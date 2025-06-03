@@ -1,14 +1,14 @@
 /* CartPage.module.css */
 
 .cartWrapper {
-  width: 100%;
+  /* width: 100%; */
   margin: 2rem auto;
   padding: 1rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: row;
   gap: 2rem;
-  min-height: 100vh;
+  min-height: 100dvh;
   background-color: #f4f6f8;
   color: #2c3e50;
   flex-wrap: wrap;
@@ -109,15 +109,6 @@
   color: #2c3e50;
 }
 
-.removeBtn {
-  font-size: 0.85rem;
-  color: #e74c3c;
-  border: none;
-  background: none;
-  cursor: pointer;
-  margin-top: 0.5rem;
-}
-
 .cartSummaryWrapper {
   flex: 1;
   display: flex;
@@ -185,6 +176,78 @@
   padding-top: 1rem;
   font-size: 0.9rem;
   color: #666;
+}
+
+.removeBtn {
+  font-size: 2rem;
+  background: none;
+  color: #e74c3c;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 0;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.removeBtn:hover {
+  transform: scale(1.2);
+}
+
+/* Empty Cart Enhancement Styles */
+
+.emptyCartParent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  background-color: #f4f6f8;
+}
+
+.emptyCart {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  margin: 3rem auto;
+  max-width: 500px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.emptyCart img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 1rem;
+  opacity: 0.85;
+}
+
+.emptyCart h2 {
+  font-size: 1.75rem;
+  color: #2c3e50;
+  margin-bottom: 0.75rem;
+}
+
+.emptyCart p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Optional CTA button */
+.emptyCart .goShop {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.emptyCart .goShop:hover {
+  background-color: #2c80b4;
 }
 
 @media (max-width: 768px) {

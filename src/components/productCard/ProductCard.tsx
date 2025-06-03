@@ -1,7 +1,12 @@
 import React from "react";
 import styles from "./ProductCard.module.css";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux-toolkit/cartSlice";
+import type { CartItem } from "../../redux-toolkit/cart.interface";
+import { toast } from "react-toastify";
 
 type ProductCardProps = {
+  id: number;
   title: string;
   price: number;
   rating: number;
@@ -10,12 +15,27 @@ type ProductCardProps = {
 };
 
 const ProductCard: React.FC<ProductCardProps> = ({
+  id,
   title,
   price,
   rating,
   description,
   thumbnail,
 }) => {
+  const dispatch = useDispatch();
+  const handleAddToCart = () => {
+    const item: CartItem = {
+      id,
+      title,
+      thumbnail,
+      price,
+      quantity: 1,
+    };
+
+    dispatch(addToCart(item));
+    toast.success(`${title} added to cart`);
+  };
+
   return (
     <div className={styles.productCard}>
       <div className={styles.imageContainer}>
@@ -23,12 +43,17 @@ const ProductCard: React.FC<ProductCardProps> = ({
       </div>
       <div className={styles.content}>
         <div className={styles.title}>{title}</div>
-        <div className={styles.price}>${price.toFixed(2)}</div>
-        <div className={styles.rating}>⭐ {rating.toFixed(1)}</div>
+        <div className={styles.priceRatingDiv}>
+          <div className={styles.price}>${price.toFixed(2)}</div>
+          <div className={styles.rating}>⭐ {rating.toFixed(1)}</div>
+        </div>
         <div className={styles.description}>{description}</div>
       </div>
       <div className={styles.buttons}>
-        <button className={`${styles.button} ${styles.addToCart}`}>
+        <button
+          className={`${styles.button} ${styles.addToCart}`}
+          onClick={handleAddToCart}
+        >
           Add to Cart
         </button>
         <button className={`${styles.button} ${styles.viewDetails}`}>

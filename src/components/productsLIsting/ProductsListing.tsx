@@ -1,11 +1,15 @@
 import { useProductFetch } from "../../hools/hooks";
 import ProductCard from "../productCard/ProductCard";
-import styles from "./Products.module.css";
+import styles from "./ProductsListing.module.css";
 
 function Products() {
   const { data: productData, isLoading: isProductLoading } = useProductFetch();
   if (isProductLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="loaderWrapper">
+        <div className="spinner"></div>
+      </div>
+    );
   }
 
   const productArr = productData?.products || [];
@@ -15,6 +19,7 @@ function Products() {
         productArr.map((item) => (
           <ProductCard
             key={item?.id}
+            id={item?.id}
             description={item?.description}
             price={item?.price}
             rating={item?.rating}
