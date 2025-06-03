@@ -1,5 +1,4 @@
-// pages/CartPage.tsx
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import styles from "./addToCart.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../../redux-toolkit/store";

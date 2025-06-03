@@ -1,5 +1,5 @@
 import { useProductFetch } from "../../hools/hooks";
-import Navbar from "../Navnar/Navbar";
+import Navbar from "../Navbar/Navbar";
 import ProductCard from "../productCard/ProductCard";
 import styles from "./ProductsListing.module.css";
 
