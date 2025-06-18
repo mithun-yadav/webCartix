@@ -1,20 +1,20 @@
 # 🛍️ Webcraftix
 
-**Webcraftix** is a modern, fully responsive e-commerce front-end built using React.js and TypeScript. It includes secure login, dynamic product listing, cart management with Redux Toolkit, and a clean UI experience.
+**Webcraftix** is a modern, fully responsive e-commerce front-end built with **React.js** and **TypeScript**. It features secure authentication, dynamic product listings, robust cart management with Redux Toolkit, and a clean, intuitive UI.
 
-🔗 **Live Demo**: [https://webcartix.pages.dev/](https://webcartix.pages.dev/)
+🔗 **Live Demo:** [https://webcartix.pages.dev/](https://webcartix.pages.dev/)
 
 ---
 
 ## 🚀 Features
 
-- 🔐 **Login Auth** – Credential-based login with route protection
-- 🧾 **Product Listing** – View all products with real-time loading states
-- 📦 **Cart Management** – Add, remove, and adjust quantity in cart
-- 🔄 **State Persistence** – Redux Persist ensures cart data is saved on reload
-- 📱 **Responsive Design** – Optimized for mobile, tablet, and desktop
-- 🔔 **Toast Notifications** – Feedback for user actions
-- 📋 **Product Detail Modal** – View more info with an elegant popup
+- 🔐 **Authentication:** Credential-based login with protected routes
+- 🧾 **Product Listing:** Browse all products with real-time loading indicators
+- 📦 **Cart Management:** Add, remove, and update quantities in your cart
+- 🔄 **State Persistence:** Cart data is saved across reloads using Redux Persist
+- 📱 **Responsive Design:** Optimized for mobile, tablet, and desktop
+- 🔔 **Toast Notifications:** Instant feedback for user actions
+- 📋 **Product Detail Modal:** Elegant popup for detailed product info
 
 ---
 
@@ -44,11 +44,43 @@ npm install
 
 # OR using yarn
 yarn install
+```
+
+---
 
 ## 🔐 Environment Variables
+
+Create a `.env` file in the root directory and add:
+
+```
 VITE_USERNAME=admin
 VITE_PASSWORD=admin123
-##Node Version 
-22.11.0
+```
+
+---
+
+## 🖥️ Development
+
+```bash
+# Start the development server
+npm run dev
+# OR
+yarn dev
+```
+
+---
+
+## ⚙️ Requirements
+
+- **Node.js:** v22.11.0 or higher
+- **npm** or **yarn**
+
+---
+
+## 📄 License
+
+This project is for educational purposes.
+
+---
 
 Made with ❤️ by Mithun
